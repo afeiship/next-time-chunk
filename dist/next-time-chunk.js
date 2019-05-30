@@ -11,6 +11,7 @@
 
   nx.timeChunk = function(inItems, inCallback, inLimit) {
     var timer;
+    var items = nx.slice(inItems);
     var start = function() {
       for (var i = 0; i < Math.min(inLimit || 1, inItems.length); i++) {
         var obj = inItems.shift();
