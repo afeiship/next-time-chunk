@@ -19,7 +19,7 @@
 
       var renderList = nx.timeChunk(
         ary,
-        function(n) {
+        function(index, n) {
           var div = document.createElement('div');
           div.innerHTML = n;
           document.body.appendChild(div);
