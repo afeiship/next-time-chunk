@@ -1,20 +1,25 @@
-(function () {
+/*!
+ * name: next-time-chunk
+ * url: https://github.com/afeiship/next-time-chunk
+ * version: 1.0.0
+ * license: MIT
+ */
 
-  var global = global || this || self || window;
+(function() {
+  var global = global || this || window || Function('return this')();
   var nx = global.nx || require('next-js-core2');
 
-  nx.timeChunk = function (inItems, inCallback, inLimit) {
-    var obj,timer;
-    var len = inItems.length;
-    var start = function () {
+  nx.timeChunk = function(inItems, inCallback, inLimit) {
+    var timer;
+    var start = function() {
       for (var i = 0; i < Math.min(inLimit || 1, inItems.length); i++) {
         var obj = inItems.shift();
         inCallback(obj);
       }
     };
 
-    return function () {
-      timer = setInterval(function () {
+    return function() {
+      timer = setInterval(function() {
         if (inItems.length === 0) {
           clearInterval(timer);
           return Promise.resolve(inItems);
@@ -27,5 +32,4 @@
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = nx.timeChunk;
   }
-
-}());
+})();

@@ -1,6 +1,7 @@
 {
   "name": "next-time-chunk",
-  "description": "Split time to chunks for next.",
+  "version": "0.0.1",
+  "description": "Split time to chunks for next",
   "main": "dist/next-time-chunk.js",
   "authors": [
     "afei"
@@ -19,6 +20,7 @@
     "bower_components",
     "test",
     "tests",
+    "build",
     "src",
     "gulp",
     "gulpfile.js"

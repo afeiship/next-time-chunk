@@ -2,18 +2,23 @@ var assert = require('assert');
 var nx = require('next-js-core2');
 require('../src/next-time-chunk');
 
-describe('next/timeChunk', function () {
+//nx.timeChunk()
+console.log('test time chunk!!!!');
 
-  it('nx.mix', function () {
-    var obj1 = {name: 'fei'};
-    var obj2 = {email: '1290657123@qq.com'};
-
-    var result = {};
-
-    nx.mix(result, obj1, obj2);
-
-    assert.equal(result.name, obj1.name);
-    assert.equal(result.email, obj2.email);
+var fetchDataApis = [1, 2, 3, 4, 5].map((item) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(item);
+      resolve({ data: item });
+    },100);
   });
-
 });
+
+nx.timeChunk(
+  fetchDataApis,
+  (data) => {
+    console.log('itemdata...');
+    console.log(data);
+  },
+  5
+);
