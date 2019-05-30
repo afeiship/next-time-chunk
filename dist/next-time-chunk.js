@@ -11,7 +11,7 @@
 
   nx.timeChunk = function(inItems, inCallback, inLimit) {
     var timer;
-    var items = nx.slice(inItems);
+    var items = nx.slice(inItems, inCallback);
     var start = function() {
       for (var i = 0; i < Math.min(inLimit || 1, inItems.length); i++) {
         var obj = inItems.shift();
@@ -24,7 +24,7 @@
       timer = setInterval(function() {
         if (inItems.length === 0) {
           clearInterval(timer);
-          return Promise.resolve(inItems);
+          inCallback(inItems);
         }
         start();
       }, 200);
