@@ -21,13 +21,15 @@
     };
 
     return function() {
-      timer = setInterval(function() {
-        if (inItems.length === 0) {
-          clearInterval(timer);
-          inCallback(inItems);
-        }
-        start();
-      }, 200);
+      return new Promise(function(resolve) {
+        timer = setInterval(function() {
+          if (inItems.length === 0) {
+            clearInterval(timer);
+            resolve();
+          }
+          start();
+        }, 200);
+      });
     };
   };
 
