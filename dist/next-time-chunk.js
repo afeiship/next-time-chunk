@@ -15,7 +15,8 @@
     var start = function() {
       for (var i = 0; i < Math.min(inLimit || 1, inItems.length); i++) {
         var obj = inItems.shift();
-        inCallback(i,obj);
+        var idx = items.indexOf(obj);
+        inCallback(idx, obj);
       }
     };
 
