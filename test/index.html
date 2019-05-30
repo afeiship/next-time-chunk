@@ -24,10 +24,12 @@
           div.innerHTML = n;
           document.body.appendChild(div);
         },
-        100
+        { chunk: 100 }
       );
 
-      renderList();
+      renderList().then((resonse) => {
+        console.log('render complete!');
+      });
     </script>
   </body>
 </html>
