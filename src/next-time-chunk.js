@@ -2,7 +2,6 @@
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('@feizheng/next-js-core2');
   var nxChunk = nx.chunk || require('@feizheng/next-chunk');
-  var nxFlatten = nx.flatten || require('@feizheng/next-flatten');
   var DEFAULT_OPTIONS = { chunk: 10, interval: 100, callback: nx.noop };
 
 
@@ -12,22 +11,24 @@
     var result = [];
     var timer = null;
     var done = false;
+    var start = function () {
+      next(dataChunks.shift());
+    };
 
-    var start = function (items) {
-      var pItems = items.map(function (item) {
-        return options.callback(item);
-      });
-      return Promise.all(pItems).then(function (res) {
-        result.push(res);
+    var next = function (items) {
+      var promises = items.map(function (item) { return options.callback(item); });
+      return Promise.all(promises).then(function (res) {
+        result = result.concat(res);
         done = (dataChunks.length === 0);
-        !done && start(dataChunks.shift());
+        !done && start();
       });
     };
 
 
+
     return new Promise(function (resolve, reject) {
       try {
-        start(dataChunks.shift());
+        start();
       } catch (err) {
         reject(err);
       }
@@ -35,7 +36,7 @@
       timer = setInterval(function () {
         if (done) {
           clearInterval(timer)
-          resolve(nxFlatten(result));
+          resolve(result);
         }
       }, options.interval);
     })

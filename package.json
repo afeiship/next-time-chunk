@@ -36,7 +36,6 @@
   },
   "dependencies": {
     "@feizheng/next-chunk": "^1.0.0",
-    "@feizheng/next-flatten": "^1.1.0",
     "@feizheng/next-js-core2": "^2.5.0"
   },
   "publishConfig": {
