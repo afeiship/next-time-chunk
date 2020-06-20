@@ -1,31 +1,44 @@
-(function() {
+(function () {
   var global = global || this || window || Function('return this')();
-  var nx = global.nx || require('next-js-core2');
-  var DEFAULT_OPTIONS = { chunk: 10, interval: 200 };
+  var nx = global.nx || require('@feizheng/next-js-core2');
+  var nxChunk = nx.chunk || require('@feizheng/next-chunk');
+  var nxFlatten = nx.flatten || require('@feizheng/next-flatten');
+  var DEFAULT_OPTIONS = { chunk: 10, interval: 100, callback: nx.noop };
 
-  nx.timeChunk = function(inItems, inCallback, inOptions) {
-    var timer;
-    var items = nx.slice(inItems, inCallback);
+
+  nx.timeChunk = function (inItems, inOptions) {
     var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
-    var start = function() {
-      for (var i = 0; i < Math.min(options.chunk, inItems.length); i++) {
-        var obj = inItems.shift();
-        var idx = items.indexOf(obj);
-        inCallback(idx, obj);
-      }
-    };
+    var dataChunks = nxChunk(inItems, options.chunk);
+    var result = [];
+    var timer = null;
+    var done = false;
 
-    return function() {
-      return new Promise(function(resolve) {
-        timer = setInterval(function() {
-          if (inItems.length === 0) {
-            clearInterval(timer);
-            resolve();
-          }
-          start();
-        }, options.interval);
+    var start = function (items) {
+      var pItems = items.map(function (item) {
+        return options.callback(item);
+      });
+      return Promise.all(pItems).then(function (res) {
+        result.push(res);
+        done = (dataChunks.length === 0);
+        !done && start(dataChunks.shift());
       });
     };
+
+
+    return new Promise(function (resolve, reject) {
+      try {
+        start(dataChunks.shift());
+      } catch (err) {
+        reject(err);
+      }
+
+      timer = setInterval(function () {
+        if (done) {
+          clearInterval(timer)
+          resolve(nxFlatten(result));
+        }
+      }, options.interval);
+    })
   };
 
   if (typeof module !== 'undefined' && module.exports) {
