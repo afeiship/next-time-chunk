@@ -4,7 +4,6 @@
   var nxChunk = nx.chunk || require('@feizheng/next-chunk');
   var DEFAULT_OPTIONS = { chunk: 10, interval: 100, callback: nx.noop };
 
-
   nx.timeChunk = function (inItems, inOptions) {
     var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
     var dataChunks = nxChunk(inItems, options.chunk);
@@ -23,8 +22,6 @@
         !done && start();
       });
     };
-
-
 
     return new Promise(function (resolve, reject) {
       try {

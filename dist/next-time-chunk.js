@@ -2,8 +2,8 @@
  * name: @feizheng/next-time-chunk
  * description: Split time to chunks for next.
  * homepage: https://github.com/afeiship/next-time-chunk
- * version: 1.0.0
- * date: 2020-06-20T15:25:15.681Z
+ * version: 1.0.1
+ * date: 2020-06-20T15:28:33.609Z
  * license: MIT
  */
 
@@ -12,7 +12,6 @@
   var nx = global.nx || require('@feizheng/next-js-core2');
   var nxChunk = nx.chunk || require('@feizheng/next-chunk');
   var DEFAULT_OPTIONS = { chunk: 10, interval: 100, callback: nx.noop };
-
 
   nx.timeChunk = function (inItems, inOptions) {
     var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
@@ -32,8 +31,6 @@
         !done && start();
       });
     };
-
-
 
     return new Promise(function (resolve, reject) {
       try {

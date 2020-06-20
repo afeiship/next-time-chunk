@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/next-time-chunk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Split time to chunks for next.",
   "homepage": "https://github.com/afeiship/next-time-chunk",
   "author": {
