@@ -3,6 +3,8 @@
 
 [![npm][npm-image]][npm-url]
 [![licence][licence-image]][license-url]
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/@feizheng/next-time-chunk)
+![npm-download-dw](https://img.shields.io/npm/dw/@feizheng/next-time-chunk)
 
 
 ## Installation
