@@ -4,12 +4,13 @@
 [![npm][npm-image]][npm-url]
 [![licence][licence-image]][license-url]
 
-## installation
+
+## Installation
 ```bash
 npm install -S @feizheng/next-time-chunk
 ```
 
-## usage
+## Usage
 ```js
 import '@feizheng/next-time-chunk';
 
@@ -46,7 +47,7 @@ nx.timeChunk(
 // [ 1, 2, 3, 4, 5 ]
 ```
 
-## resources
+## Resources
 - https://www.cnblogs.com/ahthw/p/5117570.html
 
 ## Copyright and license
@@ -54,6 +55,6 @@ nx.timeChunk(
 Code released under [the MIT license](https://github.com/afeiship/next-time-chunk/blob/master/LICENSE.txt).
 
 [npm-image]: https://img.shields.io/npm/v/rfs.svg
-[npm-url]: https://npmjs.org/package/@feizheng/next-time-chunk
+[npm-url]: https://img.shields.io/npm/v/@feizheng/next-time-chunk
 [licence-image]: https://img.shields.io/npm/l/@feizheng/next-time-chunk
 [license-url]: https://github.com/afeiship/next-time-chunk/blob/master/LICENSE.txt
