@@ -54,7 +54,7 @@ nx.timeChunk(
 
 Code released under [the MIT license](https://github.com/afeiship/next-time-chunk/blob/master/LICENSE.txt).
 
-[npm-image]: https://img.shields.io/npm/v/rfs.svg
+[npm-image]: https://img.shields.io/npm/v/@feizheng/next-time-chunk.svg
 [npm-url]: https://img.shields.io/npm/v/@feizheng/next-time-chunk
 [licence-image]: https://img.shields.io/npm/l/@feizheng/next-time-chunk
 [license-url]: https://github.com/afeiship/next-time-chunk/blob/master/LICENSE.txt
