@@ -1,18 +1,17 @@
 # next-time-chunk
 > Split time to chunks for next.
 
-[![npm][npm-image]][npm-url]
-[![licence][licence-image]][license-url]
+![npm (scoped)](https://img.shields.io/npm/v/@feizheng/next-time-chunk)
+![NPM](https://img.shields.io/npm/l/@feizheng/next-time-chunk)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@feizheng/next-time-chunk)
-![npm-download-dw](https://img.shields.io/npm/dw/@feizheng/next-time-chunk)
+![npm](https://img.shields.io/npm/dw/@feizheng/next-time-chunk)
 
-
-## Installation
+## installation
 ```bash
 npm install -S @feizheng/next-time-chunk
 ```
 
-## Usage
+## usage
 ```js
 import '@feizheng/next-time-chunk';
 
@@ -49,14 +48,8 @@ nx.timeChunk(
 // [ 1, 2, 3, 4, 5 ]
 ```
 
-## Resources
+## resources
 - https://www.cnblogs.com/ahthw/p/5117570.html
 
-## Copyright and license
-
-Code released under [the MIT license](https://github.com/afeiship/next-time-chunk/blob/master/LICENSE.txt).
-
-[npm-image]: https://img.shields.io/npm/v/@feizheng/next-time-chunk.svg
-[npm-url]: https://img.shields.io/npm/v/@feizheng/next-time-chunk
-[licence-image]: https://img.shields.io/npm/l/@feizheng/next-time-chunk
-[license-url]: https://github.com/afeiship/next-time-chunk/blob/master/LICENSE.txt
+## copyright & license
+> Code released under [the MIT license](https://github.com/afeiship/next-time-chunk/blob/master/LICENSE.txt).
