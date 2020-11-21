@@ -39,5 +39,10 @@
   },
   "dependencies": {
     "@jswork/next-chunk": "^1.0.0"
-  }
+  },
+  "keywords": [
+    "next",
+    "time",
+    "chunk"
+  ]
 }

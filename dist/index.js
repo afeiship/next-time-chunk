@@ -3,7 +3,7 @@
  * description: Split time to chunks for next.
  * homepage: https://github.com/afeiship/next-time-chunk
  * version: 1.0.0
- * date: 2020-11-21 09:25:41
+ * date: 2020-11-21 09:28:43
  * license: MIT
  */
 
