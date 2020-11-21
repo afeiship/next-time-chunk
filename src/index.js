@@ -1,7 +1,7 @@
 (function () {
   var global = global || this || window || Function('return this')();
-  var nx = global.nx || require('@feizheng/next-js-core2');
-  var nxChunk = nx.chunk || require('@feizheng/next-chunk');
+  var nx = global.nx || require('@jswork/next');
+  var nxChunk = nx.chunk || require('@jswork/next-chunk');
   var DEFAULT_OPTIONS = { chunk: 10, interval: 100, callback: nx.noop };
 
   nx.timeChunk = function (inItems, inOptions) {

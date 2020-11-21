@@ -1,19 +1,19 @@
 # next-time-chunk
 > Split time to chunks for next.
 
-![npm (scoped)](https://img.shields.io/npm/v/@feizheng/next-time-chunk)
-![NPM](https://img.shields.io/npm/l/@feizheng/next-time-chunk)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/@feizheng/next-time-chunk)
-![npm](https://img.shields.io/npm/dw/@feizheng/next-time-chunk)
+[![version][version-image]][version-url]
+[![license][license-image]][license-url]
+[![size][size-image]][size-url]
+[![download][download-image]][download-url]
 
 ## installation
 ```bash
-npm install -S @feizheng/next-time-chunk
+npm install -S @jswork/next-time-chunk
 ```
 
 ## usage
 ```js
-import '@feizheng/next-time-chunk';
+import '@jswork/next-time-chunk';
 
 const fetchApi = (item) => {
   return new Promise((resolve) => {
@@ -51,5 +51,17 @@ nx.timeChunk(
 ## resources
 - https://www.cnblogs.com/ahthw/p/5117570.html
 
-## copyright & license
-> Code released under [the MIT license](https://github.com/afeiship/next-time-chunk/blob/master/LICENSE.txt).
+## license
+Code released under [the MIT license](https://github.com/afeiship/next-time-chunk/blob/master/LICENSE.txt).
+
+[version-image]: https://img.shields.io/npm/v/@jswork/next-time-chunk
+[version-url]: https://npmjs.org/package/@jswork/next-time-chunk
+
+[license-image]: https://img.shields.io/npm/l/@jswork/next-time-chunk
+[license-url]: https://github.com/afeiship/next-time-chunk/blob/master/LICENSE.txt
+
+[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/next-time-chunk
+[size-url]: https://github.com/afeiship/next-time-chunk/blob/master/dist/next-time-chunk.min.js
+
+[download-image]: https://img.shields.io/npm/dm/@jswork/next-time-chunk
+[download-url]: https://www.npmjs.com/package/@jswork/next-time-chunk
